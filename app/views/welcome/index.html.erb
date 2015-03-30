@@ -1,0 +1,14 @@
+
+	<%= text_field_tag('players', @game.players) %>
+	<%= text_field_tag('cards_per_player', @game.cards_per_player) %>
+
+<div id="cards">
+	<% @game.results.each do |player,cards| %>
+	<h2>Player <%= player %>
+		<ul class="group_of_cards">
+			<% cards.each do |card| %>
+				<li><%=card %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
