@@ -1,3 +1,4 @@
+
 class Game
 	MINIMUN_CARDS = 1
 	MINIMUN_PLAYERS= 1
@@ -9,13 +10,8 @@ class Game
 	TOTAL_CARDS = SUITS.count * CARDS_VALUES.count
 
 	def initialize(players = PLAYERS, cards_per_player=CARDS_PER_PLAYER)
-		raise ToManyPlayersError if players.to_i > MAXIMUN_PLAYERS
-		raise NotEnoughPlayersError if players.to_i < MINIMUN_PLAYERS
-		@players=players
-		raise ToManyCardsPerPlayerError if cards_per_player.to_i > TOTAL_CARDS
-		raise NotEnoughCardsPerPlayersError if cards_per_player.to_i < MINIMUN_CARDS
-		@cards_per_player=cards_per_player
-    raise TooManyCardsDemandedError if (players.to_i * cards_per_player.to_i) > TOTAL_CARDS
+    @players, @cards_per_player = ValidateGame.parse_and_validate(players,cards_per_player)
+
 		@cards_collection = {}
 		CARDS_VALUES.each do |card_value|
 			SUITS.each do |suit|
@@ -24,7 +20,7 @@ class Game
 			end
 			@cards_availables= @cards_collection.keys
 		end
-		@maximun_cards = @cards_collection.count / players
+		@maximun_cards = @cards_collection.count / @players
 
 	end
 	attr_accessor :players, :cards_per_player, :cards_availables, :cards_collection, :maximun_cards

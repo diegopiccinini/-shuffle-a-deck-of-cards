@@ -76,3 +76,6 @@ Feature: Initials Setting
 			|	0				|	2									|	NotEnoughPlayersError					|
 			|	2				|	0									|	NotEnoughCardsPerPlayersError	|
 			| 4				|	16								| TooManyCardsDemandedError			|
+			| ff			|	16								| TypeError											|
+			| 8				|	hh55p							| TypeError											|
+			| fesef1	|	hh55p							| TypeError											|

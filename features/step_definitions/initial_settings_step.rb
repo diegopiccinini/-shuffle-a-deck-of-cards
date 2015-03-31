@@ -52,3 +52,6 @@ end
 Then(/^I should rescue this TooManyCardsDemandedError$/) do
 	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(TooManyCardsDemandedError)
 end
+Then(/^I should rescue this TypeError$/) do
+  expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(TypeError)
+end
