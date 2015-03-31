@@ -19,3 +19,4 @@ end
 Then(/^they are (\d+) in total$/) do |total_cards|
   expect(@game.cards_collection.count).to eq(total_cards.to_i)
 end
+

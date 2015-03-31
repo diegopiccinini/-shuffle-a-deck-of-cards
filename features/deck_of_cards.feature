@@ -58,9 +58,3 @@ Feature: Deak of Cards
 		And they are 52 in total
 
 
-
-
-
-
-
-
