@@ -23,3 +23,32 @@ end
 Then(/^It should has this (\d+)$/) do |maximun_cards|
   expect(@maximun_cards).to eq(maximun_cards.to_i)
 end
+
+When(/^I start a game with this number of (\w+)$/) do |players|
+  @players=players
+end
+
+And(/^and this (\w+)$/) do |cards_per_player|
+  @cards_per_player = cards_per_player
+end
+
+
+Then(/^I should rescue this ToManyPlayersError$/) do
+	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(ToManyPlayersError)
+end
+
+Then(/^I should rescue this ToManyCardsPerPlayerError$/) do
+	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(ToManyCardsPerPlayerError)
+end
+
+Then(/^I should rescue this NotEnoughPlayersError$/) do
+	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(NotEnoughPlayersError)
+end
+
+Then(/^I should rescue this NotEnoughCardsPerPlayersError$/) do
+	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(NotEnoughCardsPerPlayersError)
+end
+
+Then(/^I should rescue this TooManyCardsDemandedError$/) do
+	expect{@game = Game.new(@players,@cards_per_player)}.to raise_error(TooManyCardsDemandedError)
+end

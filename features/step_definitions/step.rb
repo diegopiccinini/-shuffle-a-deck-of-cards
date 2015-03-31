@@ -1,3 +1,2 @@
 require 'capybara/dsl'
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'game')
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'card')
+Dir[File.join(File.dirname(__FILE__), '..','..','lib', '*.rb')].each {|file| require file }

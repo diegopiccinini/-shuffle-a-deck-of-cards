@@ -64,7 +64,15 @@ Feature: Initials Setting
 			|		51		|						1								|
 			|		52		|						1								|
 
+	Scenario Outline: Checking limits restrictions
+		When I start a game with this number of <Players>
+		And and this <Cards per Player>
+		Then I should rescue this <Error>
 
-
-
-
+		Examples:
+			| Players	|	Cards per Player	| Error													|
+			| 60			|	1									| ToManyPlayersError						|
+			| 1				|	53								|	ToManyCardsPerPlayerError			|
+			|	0				|	2									|	NotEnoughPlayersError					|
+			|	2				|	0									|	NotEnoughCardsPerPlayersError	|
+			| 4				|	16								| TooManyCardsDemandedError			|
