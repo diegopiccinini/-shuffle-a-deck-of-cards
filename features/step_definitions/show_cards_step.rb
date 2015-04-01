@@ -1,9 +1,11 @@
 
 When(/^the Game has (\d+) players$/) do |players|
+	@players = players.to_i
 	expect(find_field('players').value).to eq(players)
 end
 
 When(/^(\d+) cards per player$/) do |cards_per_player|
+	@cards_per_player = cards_per_player.to_i
 	expect(find_field('cards_per_player').value).to eq(cards_per_player)
 end
 
@@ -28,5 +30,27 @@ Then(/^all cards should be different$/) do
 			@cards.push html.text
 		end
 	end
-	expect(@cards.count).to eq(@cards.uniq.count)
+	expect(@players * @cards_per_player).to eq(@cards.uniq.count)
 end
+
+Then(/^and each one should have a different image$/) do
+	div_cards=find('#cards')
+	@cards=[]
+	within(div_cards) do
+		all('img').each do |html|
+			@cards.push html.src
+		end
+	end
+	expect(@players * @cards_per_player).to eq(@cards.uniq.count)
+end
+
+When(/^I change the "(.*?)" to (\d+)$/) do |select_tag_name, selected_value|
+	case select_tag_name
+	when 'players'
+		@players = selected_value.to_i
+	when 'cards_per_player'
+		@cards_per_player = selected_value.to_i
+	end
+  select selected_value, from: select_tag_name
+end
+

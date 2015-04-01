@@ -15,5 +15,15 @@ class ValidateGame
 			raise TooManyCardsDemandedError if (players * cards_per_player) > Game::TOTAL_CARDS
 			[players,cards_per_player]
 		end
+		def parse_and_validate_players(players)
+			begin
+				players = Integer(players)
+			rescue
+				raise TypeError
+			end
+			raise ToManyPlayersError if players > Game::MAXIMUN_PLAYERS
+			raise NotEnoughPlayersError if players < Game::MINIMUN_PLAYERS
+			players
+		end
 	end
 end

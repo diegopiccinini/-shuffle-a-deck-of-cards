@@ -23,7 +23,8 @@ class Game
 		@maximun_cards_per_player = @cards_collection.count / @players
 
 	end
-	attr_accessor :players, :cards_per_player, :cards_availables, :cards_collection, :maximun_cards_per_player
+	attr_reader :players, :cards_per_player,  :cards_collection, :maximun_cards_per_player
+	attr_accessor :cards_availables
 	def results
 		players={}
 		@players.times do |player|
@@ -36,6 +37,11 @@ class Game
 		self.cards_availables-= cards
 		return cards
 	end
+  def self.get_maximun_cards_per_player(players)
 
+		players = ValidateGame.parse_and_validate_players(players)
+		TOTAL_CARDS / players
+
+  end
 
 end

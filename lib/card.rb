@@ -3,7 +3,8 @@ class Card
 		@id= card_value + ' of ' + suit
 		@card_value=card_value
 		@suit=suit
+		@image = @id.tr(' ','_') + '.png'
 	end
-	attr_accessor 	 :id, :card_value, :suit
+	attr_reader 	 :id, :card_value, :suit, :image
 
 end

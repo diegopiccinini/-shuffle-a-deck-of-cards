@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
+  post 'welcome/update_cards_per_player' => 'welcome#update_cards_per_player'
+  post 'welcome/update_game' => 'welcome#update_game'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

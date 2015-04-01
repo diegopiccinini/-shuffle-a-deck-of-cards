@@ -1,4 +1,4 @@
-<form>
+<%= form_tag('/welcome/update_game') do %>
 	<h2>Change the Game Settings</h2>
 	<label for="players">Players
 	<%= select_tag('players', options_for_select((Game::MINIMUN_PLAYERS..Game::MAXIMUN_PLAYERS),@game.players)) %>
@@ -7,4 +7,4 @@
 	<%= select_tag('cards_per_player', options_for_select((Game::MINIMUN_CARDS..@game.maximun_cards_per_player),@game.cards_per_player)) %>
 	</label>
 	<%= submit_tag('Save and Show Cards') %>
-</form>
+<% end %>
