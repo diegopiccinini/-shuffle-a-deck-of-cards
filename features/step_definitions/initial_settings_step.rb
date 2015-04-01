@@ -7,6 +7,15 @@ Then(/^the players default value should be "(\d+)"$/) do |players_value|
   expect(find_field('players').value).to  eq(players_value)
 end
 
+Then(/^should be a select tag having all options values between (\d+) and (\d+)$/) do |expected_min, expected_max|
+  expected_options_values=(expected_min..expected_max).to_a
+  options_values = []
+  find_field('players').all('option').each do |option|
+    options_values.push option.value
+  end
+  expect(options_values).to match_array (expected_options_values)
+end
+
 Then(/^the cards per player default value should be "(\d+)"$/) do |cards_per_player_value|
   expect(find_field('cards_per_player').value).to eq(cards_per_player_value)
 end

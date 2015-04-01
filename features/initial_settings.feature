@@ -3,6 +3,7 @@ Feature: Initials Setting
   Scenario: Cheking the initial settings
     When I visit the homepage "/"
     Then the players default value should be "2"
+    And should be a select tag having all options values between 1 and 52
     And the cards per player default value should be "3"
 
 	Scenario Outline: Checking Maximun Cards per Player

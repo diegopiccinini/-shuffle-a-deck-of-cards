@@ -1,7 +1,7 @@
 <form>
 	<h2>Change the Game Settings</h2>
 	<label for="players">Players
-	<%= text_field_tag('players', @game.players) %>
+	<%= select_tag('players', options_for_select((Game::MINIMUN_PLAYERS..Game::MAXIMUN_PLAYERS),@game.players)) %>
 	</label>
 	<label for="cards_per_player">Cards per Player
 	<%= text_field_tag('cards_per_player', @game.cards_per_player) %>
