@@ -20,10 +20,10 @@ class Game
 			end
 			@cards_availables= @cards_collection.keys
 		end
-		@maximun_cards = @cards_collection.count / @players
+		@maximun_cards_per_player = @cards_collection.count / @players
 
 	end
-	attr_accessor :players, :cards_per_player, :cards_availables, :cards_collection, :maximun_cards
+	attr_accessor :players, :cards_per_player, :cards_availables, :cards_collection, :maximun_cards_per_player
 	def results
 		players={}
 		@players.times do |player|

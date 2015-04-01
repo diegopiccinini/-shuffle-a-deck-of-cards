@@ -4,7 +4,7 @@
 	<%= select_tag('players', options_for_select((Game::MINIMUN_PLAYERS..Game::MAXIMUN_PLAYERS),@game.players)) %>
 	</label>
 	<label for="cards_per_player">Cards per Player
-	<%= text_field_tag('cards_per_player', @game.cards_per_player) %>
+	<%= select_tag('cards_per_player', options_for_select((Game::MINIMUN_CARDS..@game.maximun_cards_per_player),@game.cards_per_player)) %>
 	</label>
 	<%= submit_tag('Save and Show Cards') %>
 </form>

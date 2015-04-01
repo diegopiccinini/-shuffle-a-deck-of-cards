@@ -2,10 +2,11 @@ Feature: Initials Setting
   The homepage has a form to ask the user how many players and cards he want.
   Scenario: Cheking the initial settings
     When I visit the homepage "/"
-    Then the players default value should be "2"
-    And should be a select tag having all options values between 1 and 52
-    And the cards per player default value should be "3"
 
+    Then should be a select tag "players" having all options values between 1 and 52
+    And the "players" default value should be "2"
+    And should be a select tag "cards_per_player" having all options values between 1 and 26
+    And the "cards_per_player" default value should be "3"
 	Scenario Outline: Checking Maximun Cards per Player
 		Given one user has set a Game with <Players> to shuffle cards
 		When I check the game restrictions
