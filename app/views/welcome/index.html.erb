@@ -1,10 +1,16 @@
-
+<form>
+	<h2>Change the Game Settings</h2>
+	<label for="players">Players
 	<%= text_field_tag('players', @game.players) %>
+	</label>
+	<label for="cards_per_player">Cards per Player
 	<%= text_field_tag('cards_per_player', @game.cards_per_player) %>
-
+	</label>
+	<%= submit_tag('Save and Show Cards') %>
+</form>
 <div id="cards">
 	<% @game.results.each do |player,cards| %>
-	<h2>Player <%= player %>
+	<h2>Player <%= player + 1 %>
 		<ul class="group_of_cards">
 			<% cards.each do |card| %>
 				<li><%=card %></li>
