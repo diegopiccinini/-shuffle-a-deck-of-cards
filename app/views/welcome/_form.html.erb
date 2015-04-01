@@ -1,0 +1,10 @@
+<form>
+	<h2>Change the Game Settings</h2>
+	<label for="players">Players
+	<%= text_field_tag('players', @game.players) %>
+	</label>
+	<label for="cards_per_player">Cards per Player
+	<%= text_field_tag('cards_per_player', @game.cards_per_player) %>
+	</label>
+	<%= submit_tag('Save and Show Cards') %>
+</form>
