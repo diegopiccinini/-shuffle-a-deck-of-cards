@@ -33,8 +33,8 @@ class Game
 		return players
 	end
 	def get_cards
-		cards=self.cards_availables.sample(self.cards_per_player)
-		self.cards_availables-= cards
+		cards=@cards_availables.sample(@cards_per_player)
+		@cards_availables-= cards
 		return cards
 	end
   def self.get_maximun_cards_per_player(players)

@@ -35,13 +35,13 @@ end
 
 Then(/^and each one should have a different image$/) do
 	div_cards=find('#cards')
-	@cards=[]
+	@images=[]
 	within(div_cards) do
 		all('img').each do |html|
-			@cards.push html.src
+			@images.push html['src']
 		end
 	end
-	expect(@players * @cards_per_player).to eq(@cards.uniq.count)
+	expect(@players * @cards_per_player).to eq(@images.uniq.count)
 end
 
 When(/^I change the "(.*?)" to (\d+)$/) do |select_tag_name, selected_value|
@@ -54,3 +54,6 @@ When(/^I change the "(.*?)" to (\d+)$/) do |select_tag_name, selected_value|
   select selected_value, from: select_tag_name
 end
 
+Then(/^all cards should has image$/) do
+  pending # express the regexp above with the code you wish you had
+end

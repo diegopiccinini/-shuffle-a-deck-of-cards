@@ -54,7 +54,8 @@ Feature: Deak of Cards
 			|K of diamonds	|
 			|Q of diamonds	|
 		When I list the cards
-		Then all are all included
-		And they are 52 in total
+		Then all should be included
+		And they should be a total of 52
+		And All should have an image file
 
 

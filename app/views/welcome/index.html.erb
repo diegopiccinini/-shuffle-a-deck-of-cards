@@ -3,8 +3,8 @@
 	<% @game.results.each do |player,cards| %>
 	<h2>Player <%= player + 1 %>
 		<ul class="group_of_cards">
-			<% cards.each do |card| %>
-				<li><%=card %></li>
+			<% cards.each do |card_id| %>
+				<li><%= card_id %><br /><%= image_tag(Card.image(card_id),alt: card_id) %></li>
 			<% end %>
 		</ul>
 	<% end %>

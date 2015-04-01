@@ -13,4 +13,3 @@ Feature: Show Cards
     Given I visit the homepage "/"
     When I change the "players" to 5
     And should be a select tag "cards_per_player" having all options values between 1 and 10
-
