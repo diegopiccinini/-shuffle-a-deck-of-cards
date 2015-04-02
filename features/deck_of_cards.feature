@@ -1,6 +1,6 @@
 Feature: Deak of Cards
-	Scenario: Cheking the deak
-		Given this deak of cards defined to check
+	Scenario: Cheking the deak images
+		When I define this this deck of cards
 			|A of clubs			|
 			|2 of clubs			|
 			|3 of clubs			|
@@ -53,9 +53,6 @@ Feature: Deak of Cards
 			|J of diamonds	|
 			|K of diamonds	|
 			|Q of diamonds	|
-		When I list the cards
-		Then all should be included
-		And they should be a total of 52
 		And All should have an image file
 
 

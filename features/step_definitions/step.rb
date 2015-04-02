@@ -1,2 +1,2 @@
 require 'capybara/dsl'
-Dir[File.join(File.dirname(__FILE__), '..','..','lib', '*.rb')].each {|file| require file }
+require 'game_shuffle_cards'

@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-Dir[File.join(File.dirname(__FILE__), '..','lib', '*.rb')].each {|file| require file }
+require 'game_shuffle_cards'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
