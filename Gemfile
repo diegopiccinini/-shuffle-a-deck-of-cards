@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'libv8', '= 3.16.14.3'
 gem 'execjs'
 gem 'therubyracer'
-gem 'game_shuffle_cards'
+gem 'game_shuffle_cards', '=1.0.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -20,7 +20,7 @@ The applications was developed using Cucumber and capybara software in the BDD p
 
 # Configuration
 
-		git clone git@github.com:diegopiccinini/random_cards.git
+		git clone https://github.com/diegopiccinini/random_cards.git
 		cd random_cards
 		bundle install
 
